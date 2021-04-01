@@ -15,32 +15,56 @@ $CaesarСipher = new CaesarCipher (array | null $alphabet_frequency, int | null 
 
 "alphabet_frequency", array, an array in which keys, string, alphabet character,
 values, character frequency in% (statistical estimation of character recurrence frequency in texts)
+
 For example, for the Latin alphabet (obtained by the GetCharacterFrequency method, see section 5 below)
 Array
 (
     [] => 15.134
+    
     [a] => 8.104
+    
     [b] => 1.502
+    
     [c] => 3.341
+    
     [d] => 2.161
+    
     [e] => 9.741
+    
     [f] => 0.817
+    
     [g] => 0.919
+    
     [h] => 0.493
+    
     [i] => 9.91
+    
     [k] => 0.004
+    
     [l] => 2.937
+    
     [m] => 4.654
+    
     [n] => 4.936
+    
     [o] => 4.612
+    
     [p] => 2.549
+    
     [q] => 1.532
+    
     [r] => 5.501
+    
     [s] => 6.187
+    
     [t] => 6.49
+    
     [u] => 6.953
+    
     [v] => 1.103
+    
     [x] => 0.416
+    
     [y] => 0.003
 )
 
