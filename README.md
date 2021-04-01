@@ -74,8 +74,11 @@ $min_frequency: min frequency of characters, value is applied
 to identify the most commonly used symbols. By default, $min_frequency = 3;
 
 Both parameters are optional for the GetCharacterFrequency method (see below in section 5).
+
 For example:
+
 $CaesarCipher = new CaesarCipher ();
+
 $alphabet_frequency = $CaesarСipher -> GetCharacterFrequency ($inp_text, true, 3, 2) -> alphabet_frequency;
 
 
