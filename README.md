@@ -16,7 +16,7 @@ $CaesarСipher = new CaesarCipher (array | null $alphabet_frequency, int | null 
 "alphabet_frequency", array, an array in which keys, string, alphabet character,
 values, character frequency in% (statistical estimation of character recurrence frequency in texts)
 
-For example, for the Latin alphabet (obtained by the GetCharacterFrequency method, see section 5 below)
+For example, for the alphabet  of Latin language (obtained by the GetCharacterFrequency method, see section 5 below)
 
 Array
 (
@@ -128,11 +128,11 @@ $object = $CaesarСipher -> BruteForceDecoding (string $inp_text);
 $inp_text: string text to decrypt
 
 $object:
-"keyRating" array, keys - int encryption key, values ​​- float, decrypted text reting
+"keyRating" array, keys - int encryption key, values - float, decrypted text reting
 "MaxRatingKey" int, the highest rated encryption key.
 "MaxRating" float, maximum rating
 "rating", array (array (int encryption key, float rating), ... (int encryption key, float rating))
-"decoded" array, keys - int, encryption key, values ​​- string, decrypted text
+"decoded" array, keys - int, encryption key, values - string, decrypted text
 
 4. DecodingByCharacterFrequency method
 
