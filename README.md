@@ -146,23 +146,39 @@ $MaxNumberDecoding: int, allowed maximum number of decryption attempts,
 by default, the maximum number of frequently used characters in the alphabet.
 "error" is an int:
 if $inp_text is not set, "error" => 1,
+
 if all characters are unique in the ciphertext, "error" => 2,
+
 otherwise "error" => 0 returns:
 
 "MostFrequentlyCharacter", string, the most common character in an encrypted test.
+
 "MostFrequentlyCharacterInd", int, the ordinal number of this character in the alphabet.
-"keyRating", array, keys - int encryption key, values ​​- float, decrypted text reting
+
+"keyRating", array, keys - int encryption key, values - float, decrypted text reting
+
 "MaxRatingKey", int, the highest rated encryption key.
+
 "MaxRating", float, maximum rating
-"decodedKeys": array keys - int encryption key, values ​​- int, index of the "decoded" array.
+
+"decodedKeys": array keys - int encryption key, values - int, index of the "decoded" array.
+
 "decoded": array (array (c0, c1, c2, c3), ... (c0, c1, c2, c3))
+
 c0: string, a commonly used alphabet character used to calculate a key
+
 c1: int, the ordinal of this character in the alphabet.
+
 c2: int, computed encryption key
+
 c3: string, decrypted text
+
 "rating", array (array (k, r), ... (k, r))
+
 k: int encryption key,
+
 r: float rating
+
 
 
 5.The GetCharacterFrequency method
