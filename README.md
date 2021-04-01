@@ -89,10 +89,13 @@ Methods of the CaesarCipher class.
 Encrypts text with the given key
 
 $object = $CaesarСipher -> encode (string $inp_text, int $key);
+
 $inp_text: string text to encrypt
+
 $key: encryption key. value from 1 to max. the number of characters in the alphabet.
 
 $object properties:
+
 "error" is an int,
 if $inp_text is not set, "error" => 1,
 if the key is specified incorrectly, "error" => 2,
