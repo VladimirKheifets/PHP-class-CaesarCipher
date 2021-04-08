@@ -20,13 +20,12 @@ foreach($input as $item)
 $inp_text = mb_strtolower($inp_text);
 $inp_text = preg_replace("/[^\p{L}\ ]/u", "", $inp_text);
 $inp_len = strlen($inp_text);
-
+$inp_text .= PHP_EOL;
 $t=DicReplaceV($_19,$inp_len);
 echo <<<HTML
 <p>
 $t<br>
 <textarea id="inp_text">$inp_text</textarea>
-</p>
 HTML;
 
 include_once("ClassCaesarCipher.php");
@@ -71,5 +70,5 @@ foreach ($alpha as $key => $value)
 	echo "'$key' => ",number_format($value,3),PHP_EOL;
 }
 echo '</textarea>';
-echo "<div>";
+echo "</p><div>";
 ?>

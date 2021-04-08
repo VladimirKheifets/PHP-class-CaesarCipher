@@ -1,26 +1,34 @@
 <?
 /*
 	Demo PHP class CaesarCipher
-	Version: 1.1
-	Author: Vladimir Kheifets (vladimir.kheifets@online.de)	
+	Version: 1.2.1
+	Author: Vladimir Kheifets (kheifets.vladimir@online.de)	
 	Copyright ©2021 Vladimir Kheifets All Rights Reserved
 */	
 session_start();
-//https://www.alto-booking.com/timeCalculator/
 #######################################################################
 include_once("index.inc.php");
-?>
+
+echo <<<HTML
 <html>
+<html lang="$la" xml:lang="$la">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Class CaesarCipher demo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, user-scalable=0" >
+<meta name="description" content="$_desc">
+<meta name="keywords" content="$_keyw">
+<meta name="author" content="Vladimir Kheifets">
+<meta name="google" value="notranslate"/>
+$header_link
+<title>$_2</title>
 <link rel="stylesheet" href="css/CaesarCipher.css" >
 <link rel="stylesheet" href="css/modal.css" >
 <link rel="stylesheet" href="css/button_to_up.css" >
 <script src="CompactDOM.min.js"></script>
 <script src="CaesarCipher.js"></script>
 </head>
-<?
+HTML;
+
 $demo2=explode("<br>",$_18)[1];
 echo <<<HTML
 <body>
@@ -31,17 +39,19 @@ echo <<<HTML
 </div>
 <h1>$_1</h1>
 <h2>$_2
-<div><span id="demo2">$demo2</span>&#9656;</div>
+<div><span id="demo2">$demo2</span><span>&#9654;</span></div>
 </h2>
 <p>$_3</p>
 <form name="test" method="post">
 <h2>
-$_4: <select name="alphabet" id="alphabet">
+<span class="spsel">$_4: <select name="alphabet" id="alphabet">
 $options
-</select>
+</select></span>
+<span class="spsel">
  $_5: <select name="key" id="key"> 
 $options_key
 </select>
+</span>
 </h2>
 $sel_text
 </form>

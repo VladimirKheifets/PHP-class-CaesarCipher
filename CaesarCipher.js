@@ -1,7 +1,7 @@
 /*
 	Demo PHP class CaesarCipher
-	Version: 1.2, 2021-04-01
-	Author: Vladimir Kheifets (vladimir.kheifets@online.de)	
+	Version: 1.2.1, 2021-04-08
+	Author: Vladimir Kheifets (kheifets.vladimir@online.de)	
 	Copyright (c) 2021 Vladimir Kheifets All Rights Reserved
 */
 
@@ -35,7 +35,7 @@ start = function()
 			_("input").checked(0);				
 			_("#key").selected(0);
 		}	
-		_().send();
+		__.send();
 	}; 
 	
 	SendtoModal = function(e){
@@ -44,7 +44,7 @@ start = function()
 		t = "_"+id+"=1";		
 		url=__.url(a,t);		
 		attr={url:url,to:"#modal",func:viewModal,debug:1};		
-		_().send(attr);		
+		__.send(attr);		
 	};	
 	
 	viewModal = function(rsp, to, req){
@@ -69,8 +69,11 @@ start = function()
 		}
 		else if(__.ins("_demo2",req))
 		{			
-			_("textarea").resize(10);
-			_("#inp_text").style("width:90%;height:200px;overflow:auto;margin-top:20px");
+			ffc=_(".ffc");
+			ffc.attribute("readonly",true);
+			ffc.resize(10);
+			inp_text=_("#inp_text");
+			inp_text.attribute("readonly",true);		
 			_(to).position(__.pc);
 		}			
 	};
@@ -83,8 +86,12 @@ start = function()
 	_("#cookie").click(SendtoModal);
 	_("#la").click(SendtoModal);
 	_("#demo2").click(SendtoModal);	
-	_().modal();
-	_().scroll();	
-	_("textarea").resize(10);	
+	_("textarea").attribute("readonly",true);	
+	_(".content textarea").resize(10);
+	ch_resize = function(){_(".content textarea").resize(10)};
+	ch_orient = function(){__.reload()};
+	__.change(ch_resize, ch_orient);	
+	__.modal();
+	__.scroll();
 }
-_().load(start);
+__.load(start);
