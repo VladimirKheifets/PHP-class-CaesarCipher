@@ -1,8 +1,8 @@
 PHP class CaesarCipher
 
-Version: 1.0, 2021-04-01
+Version: 1.2, 2021-04-01
 
-Author: Vladimir Kheifets (vladimir.kheifets@online.de)
+Author: Vladimir Kheifets (kheifets.vladimir@online.de)
 Copyright (c) 2021 Vladimir Kheifets All Rights Reserved
 
 The class is intended for the statistical analysis of texts in various languages,
