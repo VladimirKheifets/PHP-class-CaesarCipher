@@ -1,0 +1,32 @@
+1~Cipher of Caesar
+2~Demo of PHP class CaesarCipher
+3~Select the text language, encryption key and the text you want to encrypt
+4~Language of the text
+5~Key of the encryption
+6~Ciphertext using key: {}
+7~Decrypted text using known key
+8~Breaking the cipher using the BruteForceDecoding method
+9~Key defined: {MaxRatingKey} for text with maximum rating: {MaxRating}
+10~Results for all possible encryption keys
+11~Text rating: {rating} key: {key}
+12~Cracking the cipher using the DecodingByCharacterFrequency method
+13~Breaking the cipher using this method is not possible. Use BruteForceDecoding method
+14~space
+15~In the ciphertext, the most frequently repeated character: '{character}', ordinal number in the alphabet: {indA}
+16~Key defined: {MaxRatingKey} for text with maximum rating: {MaxRating}
+17~Decrypted text rating: {keyRating}, most frequently repeated character: '{character}',
+sequence number in the alphabet {decoded}, key: {indA} - {decoded} = {key}
+18~GetCharacterFrequency Method
+Calculation of the frequency of characters of the Latin alphabet 
+19~Original text (string $inp_text):
+parts 1,2 "De Catilinae coniuratione" (late 40s BC)
+Number of characters in the text: {}
+cookie~Do you want to save the entered data in a cookie file?
+cookieY~I agree
+cookieN~No thanks
+desc~The class is intended for the statistical analysis of texts in various languages, encryption and decryption of texts using 'Caesar Cipher' algorithm
+keyw~PHP class CaesarCipher, Caesar Cipher, encryption, decryption, static text analysis 
+latina~Latin
+ru~Russian
+en~English
+de~German 

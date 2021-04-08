@@ -1,0 +1,32 @@
+1~凱撒代碼
+2~PHP類CaesarCipher的演示
+3~選擇文本語言，加密密鑰和要加密的文本
+4~文字語言
+5~加密密鑰
+6~密文使用密鑰： {}
+7~使用已知密鑰解密文本
+8~使用BruteForceDecoding方法破解密碼
+9~關鍵字定義：{MaxRatingKey}用於具有最高評分的文本：{MaxRating}
+10~所有可能的加密密鑰的結果
+11~文字評分：{rating} 鍵：{key}
+12~使用DecodingByCharacterFrequency方法破解密碼
+13~無法使用此方法破解密碼。使用BruteForceDecoding方法
+14~空間
+15~在密文中，最經常重複的字符：“{character}”，字母中的序數：{indA}
+16~關鍵字定義：{MaxRatingKey}用於具有最高評分的文本：{MaxRating}
+17~解密後的文字等級： {keyRating}，最經常重複的字符： “{character}”，
+字母{decoded}中的序列號，鍵：{indA}-{decoded} = {key}
+18~GetCharacterFrequency方法
+計算拉丁字母的符號頻率
+19~原始文本（字符串 \${inp_text}）：
+第1,2部分，“De Catilinae coniuratione”（公元前40年代後期）
+文字字符數：{}
+cookie~您是否要將輸入的數據保存在cookie文件中？
+cookieY~我同意
+cookieN~不用了
+desc~該類旨在用於對各種語言的文本進行統計分析，使用 “Caesar Cipher”算法對文本進行加密和解密
+keyw~PHP類CaesarCipher，Caesar Cipher，加密，解密，靜態文本分析 
+latina~拉丁
+ru~俄語
+en~英文
+de~德文

@@ -1,0 +1,32 @@
+1~Cipher of Caesar
+2~Demo della classe PHP CaesarCipher
+3~Selezionare la lingua del testo, la chiave di crittografia e il testo che si desidera crittografare
+4~Lingua del testo
+5~Chiave di crittografia
+6~Testo cifrato utilizzando la chiave: {}
+7~Testo decrittografato utilizzando una chiave nota
+8~Rompere il codice utilizzando il metodo BruteForceDecoding
+9~Chiave definita: {MaxRatingKey} per testo con valutazione massima: {MaxRating}
+10~Risultati per tutte le chiavi di crittografia possibili
+11~Valutazione del testo: {rating} chiave: {key}
+12~Cracking del codice utilizzando il metodo DecodingByCharacterFrequency
+13~Rompere la cifra utilizzando questo metodo non è possibile. Usa il metodo BruteForceDecoding
+14~spazio
+15~Nel testo cifrato, il carattere ripetuto più frequentemente: "{character}", numero ordinale dell'alfabeto: {indA}
+16~Chiave definita: {MaxRatingKey} per testo con valutazione massima: {MaxRating}
+17~Valutazione del testo decrittografato: {keyRating}, carattere ripetuto più frequentemente: "{character}",
+numero di sequenza nell'alfabeto {decoded}, chiave: {indA} - {decoded} = {key}
+18~Metodo GetCharacterFrequency
+Calcolo della frequenza dei simboli dell'alfabeto della lingua latina
+19~Testo originale (stringa $inp_text):
+parti 1,2 "De Catilinae coniuratione" (fine anni '40 aC)
+Numero di caratteri nel testo: {}
+cookie~Vuoi salvare i dati inseriti in un file cookie?
+cookieY~Sono d'accordo
+cookieN~No grazie
+desc~La classe è destinata all'analisi statistica di testi in varie lingue, crittografia e decrittazione di testi utilizzando l'algoritmo 'Caesar Cipher'
+keyw~Classe PHP CaesarCipher, Caesar Cipher, crittografia, decrittografia, analisi statica del testo 
+latina~Latino
+ru~Russo
+en~Inglese
+de~Tedesco  

@@ -1,0 +1,32 @@
+1~Chiffre von Cäsar
+2~Demo der PHP-Klasse CaesarCipher
+3~Wählen Sie die Textsprache, den Verschlüsselungsschlüssel und den zu verschlüsselnden Text aus
+4~Textsprache
+5~Verschlüsselungsschlüssel
+6~Chiffretext mit Schlüssel: {}
+7~Entschlüsselter Text mit bekanntem Schlüssel
+8~Knacken der Verschlüsselung mit der BruteForceDecoding-Methode
+9~Schlüssel definiert: {MaxRatingKey} für Text mit maximaler Bewertung: {MaxRating}
+10~Ergebnisse für alle möglichen Verschlüsselungsschlüssel
+11~Textbewertung: {rating} Schlüssel: {key}
+12~Knacken der Verschlüsselung mit der DecodingByCharacterFrequency-Methode
+13~Das Aufbrechen der Chiffre mit dieser Methode ist nicht möglich. Verwenden Sie die BruteForceDecoding-Methode
+14~Leerzeichen
+15~Im Chiffretext das am häufigsten wiederholte Zeichen: '{character}', Ordnungszahl im Alphabet: {indA}
+16~Schlüssel definiert: {MaxRatingKey} für Text mit maximaler Bewertung: {MaxRating}
+17~Bewertung des entschlüsselten Textes: {keyRating}, am häufigsten wiederholtes Zeichen: '{character}',
+Sequenznummer im Alphabet {decoded}, Schlüssel: {indA} - {decoded} = {key}
+18~GetCharacterFrequency-Methode
+Berechnung der Häufigkeit von Zeichen des Alphabets der lateinischen Sprache 
+19~Originaltext (Zeichenfolge $inp_text):
+Teile 1,2 "De Catilinae coniuratione" (Ende der 40er Jahre v. Chr.)
+Anzahl der Zeichen im Text: {}
+cookie~Möchten Sie die eingegebenen Daten in einer Cookie-Datei speichern?
+cookieY~Ich stimme zu
+cookieN~Nein danke
+desc~Die Klasse dient zur statistischen Analyse von Texten in verschiedenen Sprachen sowie zur Ver- und Entschlüsselung von Texten mit dem Algorithmus 'Caesar Cipher'
+keyw~PHP-Klasse CaesarCipher, Caesar Cipher, Verschlüsselung, Entschlüsselung, statische Textanalyse 
+latina~Latein
+ru~Russisch
+de~Englisch
+de~Deutsch  

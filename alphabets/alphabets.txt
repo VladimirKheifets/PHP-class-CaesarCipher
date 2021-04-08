@@ -1,0 +1,4 @@
+latina
+ru
+en
+de

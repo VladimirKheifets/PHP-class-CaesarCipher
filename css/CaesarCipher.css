@@ -1,0 +1,104 @@
+/*
+	Demo PHP class CaesarCipher
+	Version: 1.2.1, 2021-04-08
+	Author: Vladimir Kheifets (kheifets.vladimir@online.de)	
+	Copyright ©2021 Vladimir Kheifets All Rights Reserved
+*/
+body,div{font-family: Arial, Helvetica, sans-serif;color:#35527C}
+select,textarea, button, .set-cookie p { 
+	margin:20 20 0 20;
+	outline: none;
+	font-size:14pt;
+	border-radius: 5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius: 5px;
+	border: 1px #85A0C9 solid;
+	padding: 5;
+	color:#35527C;
+	background-color:#FFFFFF;	
+}
+button,.set-cookie p{cursor:pointer;margin:10 0 0 0;padding: 5 20 5 20;background-color:#F1F1F1}
+button:hover,.set-cookie p:hover {background:#FCEBE7}
+body,textarea{ font-family:Arial, Helvetica, sans-serif; font-size:14px}
+.content{ width:768px;display: block;margin:0 auto}p + div{display: table-cell;text-align:left}
+.demo2{ width:768px;display: table-cell;text-align:center;padding-bottom:20px}
+#demo2 + span{margin-left:2pt;font-size:10pt}
+h1{font-size:20px;clear:both}
+select,h2,h2+p{font-size:16px}
+select{display:inline}
+h1,h2,h2+p{font-weight: normal;text-align:center}
+h2+p{padding:0 10 0 10}
+h2 div{padding:10px}
+textarea{width:90%;max-width:90%;height:0px;color:#0000FF;padding:10 10 0 10;margin-top:5px;overflow:hidden;}
+.demo2 textarea{width:100%;max-width:100%;position:relative;margin:20 auto 0 auto}
+div[id^="bl"]{display:none}
+div[id^="vbl"]{cursor:pointer;display:inline;font-weight:bold }
+div[id^="vbl"]:hover{text-decoration:underline;}
+hr{margin:20 0 20 0}
+select{margin-right:20px}
+.FL{float:left}
+.FR{float:right}
+.ffc{font-family:courier;margin-top:20px}
+#inp_text{height:200px;overflow-Y:auto;margin-top:20px;}
+#cookie, #la{font-size:18px;cursor:pointer}
+#demo2{cursor:pointer}
+#cookie:hover,#la:hover,#demo2:hover{text-decoration:underline}
+.top{
+	display:block;		
+	position: relative;
+	padding:0 20 0 20;	
+}
+.la-liste{max-width:320px; width:320px;display:table-cell;text-align:center}
+.la-liste span{cursor:pointer;padding:5 5 5 5;margin-top:5px; display:inline-block}
+.la-liste span:hover{background-color:#F1F1F1}
+.set-cookie{padding:20 20 20 20}
+.set-cookie div{	
+	margin-top:20px;	
+}
+.set-cookie p{	
+	display:inline-block;	
+}
+.copy{
+font-size:14pt;
+padding:40 0 20 0;
+width:100%;
+text-align:center
+}
+.copy p{font-size:10pt;display:inline;padding-right:2px}
+/*--------------------------------------*/
+@media only screen and (min-width: 240px) and (max-width: 319px){
+	.content,.spsel,.demo2{width:98vw}
+	.spsel{display:block}
+	.top{position:static;padding:20px}
+	#modal_content{}
+	/*#modal_content{width:240px;max-width:240px}*/
+	#scrollup {	bottom: 20px;left:5px;}	
+	.set-cookie{padding:20 0 60 0}
+	.set-cookie p{margin-left:5px;padding:5 3 5 3}
+	.set-cookie p + p{margin-right:5px}	
+}
+@media only screen and (min-width: 320px) and (max-width: 479px){
+	.content,.spsel.demo2{ width:98vw}
+	.spsel{display:block;position:static}
+	.top{position:static;padding:20px}
+	#modal_content{}
+	/*#modal_content{width:320px;max-width:320px}*/
+	#scrollup {	bottom: 20px;left:5px;}	
+	.set-cookie{padding:20 0 60 0}
+	.set-cookie p{margin-left:5px;padding:5 3 5 3}
+	.set-cookie p + p{margin-right:5px}	
+}
+@media only screen and (min-width: 480px) and (max-width: 640px) {
+	.content,.spsel,.demo2{ width:98vw}	
+	.top{position:static;padding:20px}
+	#modal_content{}
+	/*#modal_content{width:320px;max-width:320px}*/
+	#scrollup {	bottom: 20px;left:5px;}
+	.set-cookie{padding:20 0 60 0}
+	.set-cookie p{margin-left:5px;padding:5 3 5 3}
+	.set-cookie p + p{margin-right:5px}
+}	
+@media only screen and (min-width: 641px) and (max-width: 770px) {
+	.content,.spsel,.demo2{width:98vw}
+}	
+
