@@ -1,9 +1,9 @@
 <?
 /*
 	PHP class CaesarCipher
-	Version: 1.2, 2021-04-01
-	Author: Vladimir Kheifets (kheifets.vladimir@online.de)	
-	Copyright (c) 2021 Vladimir Kheifets All Rights Reserved
+	Version: 3.1, 2026-05-22
+	Author: Vladimir Kheifets (kheifets.vladimir@online.de)
+	Copyright (c) 2026 Vladimir Kheifets All Rights Reserved
 */
 
 class CaesarCipher {
@@ -59,15 +59,19 @@ class CaesarCipher {
 		$alphabet_count = $this->alphabet_count;
 		$alphabet_count_s = $this->alphabet_count_s;
 		$out_text="";
-		$buf = preg_split('//u', $inp_text, null, PREG_SPLIT_NO_EMPTY);
+		$buf = preg_split('//u', $inp_text, -1, PREG_SPLIT_NO_EMPTY);
+		echo "<hr>$inp_text<hr>";
 		foreach ($buf as $symbol) {	
-			$ind=$alphabet_ind[$symbol];
-			$ind_c = $ind + $key;		
-			if($ind_c < 0) 
-				$ind_c += $alphabet_count;
-			else if($ind_c > $alphabet_count_s)
-				$ind_c -= $alphabet_count; 	
-			$out_text.= $alphabet[$ind_c];
+			if(isset($alphabet_ind[$symbol]))
+			{
+				$ind=$alphabet_ind[$symbol];
+				$ind_c = $ind + $key;
+				if($ind_c < 0)
+					$ind_c += $alphabet_count;
+				else if($ind_c > $alphabet_count_s)
+					$ind_c -= $alphabet_count;
+				$out_text.= $alphabet[$ind_c];
+			}
 		}		
 		return (object)
 		[
@@ -96,26 +100,32 @@ class CaesarCipher {
 		$most_frequently_used_count = $this->most_frequently_used_count;
 		$len_inp_text=mb_strlen($inp_text);	
 		$out_text="";
-		$buf = preg_split('//u', $inp_text, null, PREG_SPLIT_NO_EMPTY);			
+		$buf = preg_split('//u', $inp_text, -1, PREG_SPLIT_NO_EMPTY);
 		$rating=0;
 		foreach($buf as $symbol)
 		{
-			$ind=$alphabet_ind[$symbol];
-			$ind_k = $ind + $key;			
-			if($ind_k < 0) 
-				$ind_k +=$alphabet_count; 
-			else if($ind_k > $alphabet_count_s) 
-				$ind_k +=-$alphabet_count; 			
-			$character = $alphabet[$ind_k];
-			$i=$alphabet_ind[$character];
-			if($frequency[$i] > $min_character_frequency AND $character!=" ")
-			{	
-				$k = 1 + ($most_frequently_used_count - $most_frequently_used_ind[$character])
-				/($most_frequently_used_count - 1);
-				//echo "$character $k ".$frequency[$i]." ".round($frequency[$i] * $k, 2)."<br>"; 				
-			 	$rating += round($frequency[$i] * $k, 3);	
+			if(isset($alphabet_ind[$symbol]))
+			{
+				$ind=$alphabet_ind[$symbol];
+				$ind_k = $ind + $key;
+				if($ind_k < 0)
+					$ind_k +=$alphabet_count;
+				else if($ind_k > $alphabet_count_s)
+					$ind_k +=-$alphabet_count;
+				$character = $alphabet[$ind_k];
+				if(isset($most_frequently_used_ind[$character])){
+					$i=$alphabet_ind[$character];
+					if($frequency[$i] > $min_character_frequency AND $character!=" ")
+					{
+						$k = 1 + ($most_frequently_used_count - $most_frequently_used_ind[$character])
+						/($most_frequently_used_count - 1);
+						//echo "$character $k ".$frequency[$i]." ".round($frequency[$i] * $k, 2)."<br>";
+					 	$rating += round($frequency[$i] * $k, 3);
+					}
+				}
+				$out_text .= $character;
+
 			}
-			$out_text .= $character;			
 		}
 		//echo "<br>$rating<hr>";				
 		return (object)
@@ -157,7 +167,7 @@ class CaesarCipher {
 		[
 			"error" => 1			 	   
 		];
-		$buf = preg_split('//u', $inp_text, null, PREG_SPLIT_NO_EMPTY);		
+		$buf = preg_split('//u', $inp_text, -1, PREG_SPLIT_NO_EMPTY);
 		$CharacterFrequency = self::GetCharacterFrequency($buf);		
 		if($CharacterFrequency -> error)
 		{
@@ -191,9 +201,12 @@ class CaesarCipher {
 			$decoded[$i][1] = $iAmfu;
 			$decoded[$i][2] = $key;
 			$res = self::decode($inp_text, $key);			
-			$decoded[$i][3] = $res->text;
-			$rating[] = [$key, $keyRating[$key] = $res->rating];
-			$decodedKeys[$key]=$i;
+			if(isset($res->text))
+			{
+				$decoded[$i][3] = $res->text;
+				$rating[] = [$key, $keyRating[$key] = $res->rating];
+				$decodedKeys[$key]=$i;
+			}
 		}
 		$ratingC1 = array_column($rating, 1);		
 		array_multisort($ratingC1, SORT_DESC, $rating);		
@@ -220,7 +233,7 @@ class CaesarCipher {
 			"error" => 1			 	   
 		];
 		if(!is_array($buf))
-			$buf = preg_split('//u', $buf, null, PREG_SPLIT_NO_EMPTY);
+			$buf = preg_split('//u', $buf, -1, PREG_SPLIT_NO_EMPTY);
 		if($sort_col)
 		{
 			$sort_col=$sort_col-1;
@@ -243,9 +256,11 @@ class CaesarCipher {
 				"error" => 2				   
 			];	
 		}					
-		foreach ($uniq_buf as $i => $vu) 
+
+		foreach ($uniq_buf as $i => $vu)
 		{
-			foreach($buf as $v) 
+			$Frequency[$i]=0;
+			foreach($buf as $v)
 			{
 				if($v===$vu) $Frequency[$i]++; 
 			}
@@ -264,12 +279,15 @@ class CaesarCipher {
 		{
 			if(is_string($inp_alphabet))
 			{	
-				$alphabet_arr = preg_split('//u', $inp_alphabet, null, PREG_SPLIT_NO_EMPTY);	
+				$alphabet_arr = preg_split('//u', $inp_alphabet, -1, PREG_SPLIT_NO_EMPTY);
 				$CharacterFrequencyC0 = array_flip(array_column($CharacterFrequency, 0));				
 				foreach($alphabet_arr as $character)
-				{					
-					$i = $CharacterFrequencyC0[$character];										
-					$alphabet_frequency[$character]=$CharacterFrequency[$i][1];					
+				{
+					if(isset($CharacterFrequencyC0[$character]))
+					{
+						$i = $CharacterFrequencyC0[$character];
+						$alphabet_frequency[$character]=$CharacterFrequency[$i][1];
+					}
 				} 				
 			}
 			else

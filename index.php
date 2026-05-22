@@ -1,16 +1,14 @@
 <?
 /*
 	Demo PHP class CaesarCipher
-	Version: 1.2.1
-	Author: Vladimir Kheifets (kheifets.vladimir@online.de)	
-	Copyright ©2021 Vladimir Kheifets All Rights Reserved
-*/	
+	Version: 3.1, 2026-05-22
+	Author: Vladimir Kheifets (kheifets.vladimir@online.de)
+	Copyright (c) 2026 Vladimir Kheifets All Rights Reserved
+*/
 session_start();
 #######################################################################
 include_once("index.inc.php");
-
 echo <<<HTML
-<html>
 <html lang="$la" xml:lang="$la">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -48,7 +46,7 @@ echo <<<HTML
 $options
 </select></span>
 <span class="spsel">
- $_5: <select name="key" id="key"> 
+ $_5: <select name="key" id="key">
 $options_key
 </select>
 </span>
@@ -73,15 +71,15 @@ print_text($_7, $text_decode);
 
 echo "<br><hr><b>$_8</b><br>";
 $res = $CaesarСipher->BruteForceDecoding($text_encode);
-$MaxRatingKey = $res -> MaxRatingKey;			
+$MaxRatingKey = $res -> MaxRatingKey;
 $MaxRating = $res -> MaxRating;
 $decoded = $res -> decoded;
 $keyRating = $res -> keyRating;
 $rating = $res -> rating;
 print_text($_9, $decoded[$MaxRatingKey], $res);
-block_view_trigger(1, $_10);	
+block_view_trigger(1, $_10);
 foreach ($rating as $item)
-{	
+{
 	$repl["key"] = $key = $item[0];
 	$repl["rating"] = $keyRating[$key];
 	$text=$decoded[$key];
@@ -101,30 +99,30 @@ else
 {
 
 	$character = $res->MostFrequentlyCharacter;
-	$indA = $res->MostFrequentlyCharacterInd;	
-	$character = ord($character)==32?$_14:$character;	
-	$s=DicReplaceV($_15, compact("character","indA"))."<br>";    
+	$indA = $res->MostFrequentlyCharacterInd;
+	$character = ord($character)==32?$_14:$character;
+	$s=DicReplaceV($_15, compact("character","indA"))."<br>";
     $keyRating = $res -> keyRating;
 	$MaxRatingKey = $res -> MaxRatingKey;
 	$MaxRating = $res -> MaxRating;
-	$decodedKeys = $res -> decodedKeys;	
+	$decodedKeys = $res -> decodedKeys;
 	$alldecoded = $res -> decoded;
 	$rating = $res -> rating;
 	$i_decoded = $decodedKeys[$MaxRatingKey];
-	$decoded = $alldecoded[$i_decoded];		
-	print_text($s.$_16, $decoded[3], $res);	    
+	$decoded = $alldecoded[$i_decoded];
+	print_text($s.$_16, $decoded[3], $res);
 	block_view_trigger(2, $_10);
-	foreach ($rating as $item) 
-	{	
+	foreach ($rating as $item)
+	{
 		if($item[1]>0)
-		{		
+		{
 			$repl["indA"]=$indA;
 			$repl["key"] = $key=$item[0];
 			$i=$decodedKeys[$key];
-			$decoded = $alldecoded[$i];	
-			$repl["decoded"] = $decoded[1];			
+			$decoded = $alldecoded[$i];
+			$repl["decoded"] = $decoded[1];
 			$repl["character"] = ord($decoded[0])==32?$_14:$decoded[0];
-			$repl["keyRating"] = $keyRating[$key];		
+			$repl["keyRating"] = $keyRating[$key];
 			print_text($_17, $decoded[3], $repl);
 		}
 

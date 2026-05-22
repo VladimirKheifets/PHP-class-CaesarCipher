@@ -1,9 +1,9 @@
 <?
 /*
 	Demo PHP class CaesarCipher
-	Version: 1.2, 2021-04-01
-	Author: Vladimir Kheifets (vladimir.kheifets@online.de)	
-	Copyright (c) 2021 Vladimir Kheifets All Rights Reserved
+	Version: 3.1, 2026-05-22
+	Author: Vladimir Kheifets (kheifets.vladimir@online.de)
+	Copyright (c) 2026 Vladimir Kheifets All Rights Reserved
 */
 echo <<<HTML
 <div class="demo2" align="center">
@@ -13,6 +13,7 @@ $_18<br>
 </h2>
 HTML;
 $input=file("tests/latina.txt");
+$inp_text = "";
 foreach($input as $item)
 {
 	if($item!="") $inp_text .= "$item ";
@@ -36,7 +37,6 @@ include_once("ClassCaesarCipher.php");
 $CaesarСipher = new CaesarCipher();
 
 $alpha = $CaesarСipher -> GetCharacterFrequency($inp_text, true, 3, 2)->alphabet_frequency;
-
 echo '<textarea class="ffc">
 <?
 $alpha = $CaesarСipher -> GetCharacterFrequency($inp_text, true, 3, 2)-> alphabet_frequency;',PHP_EOL;
@@ -48,6 +48,7 @@ echo 'foreach ($alpha as $key => $value)
 echo '?>',PHP_EOL.PHP_EOL;
 foreach ($alpha as $key => $value) 
 {
+	if(preg_match("/\S/", $key))
 	echo "'$key' => ",number_format($value,3),PHP_EOL;
 }
 echo '</textarea>';

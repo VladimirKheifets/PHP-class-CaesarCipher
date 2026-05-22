@@ -1,8 +1,8 @@
 /*
-	Demo PHP class CaesarCipher
-	Version: 1.2.3, 2021-04-29
+	CompactDOM-script CaesarCipher
+	Version: 3.1, 2026-05-22
 	Author: Vladimir Kheifets (kheifets.vladimir@online.de)
-	Copyright (c) 2021 Vladimir Kheifets All Rights Reserved
+	Copyright (c) 2026 Vladimir Kheifets All Rights Reserved
 */
 start = function()
 {
