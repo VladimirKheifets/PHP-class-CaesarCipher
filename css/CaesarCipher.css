@@ -1,8 +1,8 @@
 /*
 	Demo PHP class CaesarCipher
-	Version: 1.2.1, 2021-04-08
-	Author: Vladimir Kheifets (kheifets.vladimir@online.de)	
-	Copyright ©2021 Vladimir Kheifets All Rights Reserved
+	Version: 3.1, 2026-05-22
+	Author: Vladimir Kheifets (kheifets.vladimir@online.de)
+	Copyright (c) 2026 Vladimir Kheifets All Rights Reserved
 */
 body,div{font-family: Arial, Helvetica, sans-serif;color:#35527C}
 select,textarea, button, .set-cookie p { 
@@ -31,7 +31,7 @@ h2+p{padding:0 10 0 10}
 h2 div{padding:10px}
 textarea{width:90%;max-width:90%;height:0px;color:#0000FF;padding:10 10 0 10;margin-top:5px;overflow:hidden;}
 .demo2 textarea{width:100%;max-width:100%;position:relative;margin:20 auto 0 auto}
-div[id^="bl"]{display:none}
+div[id^="bl"]{display:block}
 div[id^="vbl"]{cursor:pointer;display:inline;font-weight:bold }
 div[id^="vbl"]:hover{text-decoration:underline;}
 hr{margin:20 0 20 0}
