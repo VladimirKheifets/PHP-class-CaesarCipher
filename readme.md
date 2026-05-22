@@ -1,6 +1,6 @@
 # PHP class CaesarCipher
 
-### Version: 1.2, 2021-04-01
+### Version: 3.1, 2026-05-22
 
 Author: Vladimir Kheifets <kheifets.vladimir@online.de>
 
